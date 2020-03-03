@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Users</title>
+    </head>
+    <body>
+        <table id="navigation">
+            <tr>
+                <th>ID</th>
+                <th>EMAIL</th>
+                <th>ROLES</th>
+            </tr>
+            {% for user in listUsers %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{% for rol in user.roles %}
+                            {{rol}},
+                        {% endfor %}        
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
